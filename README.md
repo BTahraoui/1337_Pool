@@ -1,44 +1,67 @@
-# 🧪 1337 Pool — C00
+# 1337 Pool — 42 School Cursus Reimplementation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-My solutions to the **C00** module of the [1337](https://1337.ma) / 42 School cursus — the very first dive into C programming at the pool. These exercises build core procedural foundations: system calls, loops, conditionals, and recursion, all while getting comfortable with `write(2)` as the only allowed output function.
+Personal reimplementation of the **42 School / 1337** piscine (pool) curriculum.  
+This repository tracks my solutions to the piscine modules as I progress through the curriculum, written in strict compliance with the 42 School norms (Norminette).
+
+> **Note:** This project is for educational purposes only. All code is written from scratch to learn the fundamentals of C, shell scripting, and algorithmic thinking.
 
 ---
 
-## 📁 Exercises
+## 📂 Repository Structure
 
-| # | Exercise | Description | Key Concepts |
-|---|----------|-------------|--------------|
-| 00 | [`ft_putchar`](C00/ft_putchar.c) | Write a single character to stdout | `write(2)`, basic syscall |
-| 01 | [`ft_print_alphabet`](C00/ft_print_alphabet.c) | Print `a` to `z` in order | `while` loop, `char` increment |
-| 02 | [`ft_print_reverse_alphabet`](C00/ft_print_reverse_alphabet.c) | Print `z` to `a` backwards | Decrement loop, reverse iteration |
-| 03 | [`ft_print_numbers`](C00/ft_print_numbers.c) | Print `0` to `9` | Numeric → ASCII mapping |
-| 04 | [`ft_is_negative`](C00/ft_is_negative.c) | Print `N` if negative, `P` otherwise | `if/else`, conditionals |
-| 05 | [`ft_print_comb`](C00/ft_print_comb.c) | Print all ascending 3-digit combos (`012, 013, … 789`) | Nested loops, comma-separated output |
-| 06 | [`ft_print_comb2`](C00/ft_print_comb2.c) | Print all ascending 2-number combos (`00 01, 00 02, … 98 99`) | Two-digit formatting, `div`/`mod` |
-| 07 | [`ft_putnbr`](C00/ft_putnbr.c) | Print any integer (handles `-2147483648`) | Recursion, `INT_MIN` edge case |
+```
+1337_Pool/
+├── C00/                 # Piscine C00 – Basics of C (write, loops, conditionals)
+│   ├── ft_putchar.c
+│   ├── ft_print_alphabet.c
+│   ├── ft_print_reverse_alphabet.c
+│   ├── ft_print_numbers.c
+│   ├── ft_is_negative.c
+│   ├── ft_print_comb.c
+│   ├── ft_print_comb2.c
+│   ├── ft_putnbr.c
+│   └── c00.pdf          # Subject PDF
+├── C01/                 # (to be added) – Functions, libraries, etc.
+├── C02/                 # (to be added) – Pointers, arrays, strings
+├── ...                  # Further modules as I progress
+├── LICENSE
+└── README.md
+```
+
+Each module directory contains:
+- The source files (`*.c`) implementing the required functions.
+- The original subject PDF (`cXX.pdf`) for reference.
+- No `main()` functions – files are intended to be compiled with the Moulinette or a personal test harness.
 
 ---
 
-## 🧠 What I learned
+## ✅ Progress
 
-- How to use the **`write`** system call (`unistd.h`) — the only output function permitted in the 42 pool.
-- **ASCII arithmetic**: `'0'` + `n` = digit character; `'a'` + `n` = letter.
-- **Loop design** — `while` loops with `char` or `int` counters, and the discipline of resetting inner counters.
-- **Nested loops** — `ft_print_comb` uses three levels of `while` to enforce `a < b < c` ordering.
-- **Two-digit formatting** — extracting tens and ones via `/ 10` and `% 10` in `ft_print_comb2`.
-- **Recursion** — `ft_putnbr` calls itself to print multi-digit numbers.
-- **Edge-case thinking** — the `INT_MIN` special case in `ft_putnbr` (since `-INT_MIN` overflows on two's complement).
+| Module | Status | Description |
+|--------|--------|-------------|
+| **C00** | ✅ Completed | Basic C: `write`, loops, conditionals, recursion, ASCII manipulation |
+| C01 | ⏳ Planned | Functions, libraries, header files, makefiles |
+| C02 | ⏳ Planned | Pointers, arrays, strings |
+| … | ⏳ Planned | … |
+
+*Update this table as new modules are added.*
 
 ---
 
-## 🔧 Build & Test
+## 🛠️ How to Build & Test Locally
 
-At 42/1337 you don't use `main()` in the submission files — exercises are verified by the **Moulinette** (automated grader). But you can test locally with a quick wrapper:
+Although the official evaluation uses the Moulinette, you can compile and test each exercise locally with a simple `main.c`:
 
 ```c
-// main.c — local test harness
+/* example test harness */
+#include <unistd.h>
+
+void ft_putchar(char c);
+void ft_print_alphabet(void);
+/* … declare other functions you want to test … */
+
 int main(void)
 {
     ft_print_alphabet();
@@ -51,23 +74,47 @@ int main(void)
     write(1, "\n", 1);
     ft_print_comb2();
     write(1, "\n", 1);
-    ft_putnbr(42);
+    ft_putnbr(4096);
+    write(1, "\n", 1);
     return (0);
 }
 ```
 
+Compile with the recommended 42 flags:
+
 ```bash
-cc -Wall -Wextra -Werror main.c C00/ft_putchar.c C00/ft_print_alphabet.c
-./a.out
+cc -Wall -Wextra -Werror main.c C00/*.c -o test
+./test
 ```
+
+> **Tip:** Keep a separate `main.c` for each exercise or group of exercises to avoid undefined‑reference errors.
+
+---
+
+## 📜 Norminette
+
+All source files aim to comply with the **Norme** (42 School coding standard).  
+You can verify locally with:
+
+```bash
+norminette C00/*.c
+```
+
+*(Install `norminette` via the official 42 repository or your package manager.)*
+
+---
+
+## 🤝 Contributing
+
+This is a personal learning repository. However, if you spot a bug, have a suggestion, or want to discuss an alternative approach, feel free to open an issue or submit a pull request.
 
 ---
 
 ## 📜 License
 
-This project is for learning purposes. Licensed under the [MIT License](LICENSE) — feel free to use, learn from, and adapt.
+This project is released under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 ---
 
-> **Badr Tahraoui** — 1337 Benguerir
-> [GitHub](https://github.com/UzalSahn)
+> **Badr Tahraoui** – 1337/42 Student  
+> GitHub: [https://github.com/UzalSahn](https://github.com/UzalSahn)
