@@ -23,7 +23,17 @@ This repository tracks my solutions to the piscine modules as I progress through
 │   ├── ft_print_comb2.c
 │   ├── ft_putnbr.c
 │   └── c00.pdf          # Subject PDF
-├── C01/                 # (to be added) – Functions, libraries, etc.
+├── C01/                 # Piscine C01 – Functions, pointers, basic algorithms
+│   ├── ft_swap.c
+│   ├── ft_ultimate_div_mod.c
+│   ├── ft_putstr.c
+│   ├── ft_strlen.c
+│   ├── ft_ft.c
+│   ├── ft_div_mod.c
+│   ├── ft_ultimate_ft.c
+│   ├── ft_rev_int_tab.c
+│   ├── ft_sort_int_tab.c
+│   └── c01.pdf          # Subject PDF
 ├── C02/                 # (to be added) – Pointers, arrays, strings
 ├── ...                  # Further modules as I progress
 ├── LICENSE
@@ -33,7 +43,7 @@ This repository tracks my solutions to the piscine modules as I progress through
 Each module directory contains:
 - The source files (`*.c`) implementing the required functions.
 - The original subject PDF (`cXX.pdf`) for reference.
-- No `main()` functions – files are intended to be compiled with the Moulinette or a personal test harness.
+- No `main()` functions – files are intended to be compiled with the Moulinette or a personal test harness (any `main` present is for local testing only).
 
 ---
 
@@ -42,7 +52,7 @@ Each module directory contains:
 | Module | Status | Description |
 |--------|--------|-------------|
 | **C00** | ✅ Completed | Basic C: `write`, loops, conditionals, recursion, ASCII manipulation |
-| C01 | ⏳ Planned | Functions, libraries, header files, makefiles |
+| **C01** | ✅ Completed | Functions, pointers, basic algorithms: `swap`, `div/mod`, `strlen`, `putstr`, address manipulation, integer array sorting/reversing |
 | C02 | ⏳ Planned | Pointers, arrays, strings |
 | … | ⏳ Planned | … |
 
@@ -55,27 +65,29 @@ Each module directory contains:
 Although the official evaluation uses the Moulinette, you can compile and test each exercise locally with a simple `main.c`:
 
 ```c
-/* example test harness */
+/* example test harness – include only the functions you are testing */
 #include <unistd.h>
+#include <stdio.h>
 
 void ft_putchar(char c);
 void ft_print_alphabet(void);
-/* … declare other functions you want to test … */
+void ft_swap(int *a, int *b);
+int ft_strlen(char *str);
+/* … add prototypes for other functions you wish to test … */
 
 int main(void)
 {
+    /* Example tests – adapt as needed */
     ft_print_alphabet();
     write(1, "\n", 1);
-    ft_print_numbers();
-    write(1, "\n", 1);
-    ft_is_negative(-5);
-    write(1, "\n", 1);
-    ft_print_comb();
-    write(1, "\n", 1);
-    ft_print_comb2();
-    write(1, "\n", 1);
-    ft_putnbr(4096);
-    write(1, "\n", 1);
+
+    int a = 1, b = 2;
+    ft_swap(&a, &b);
+    ft_putnbr(a); write(1, " ", 1); ft_putnbr(b); write(1, "\n", 1);
+
+    char *str = "Hello";
+    ft_putnbr(ft_strlen(str)); write(1, "\n", 1);
+
     return (0);
 }
 ```
@@ -83,7 +95,7 @@ int main(void)
 Compile with the recommended 42 flags:
 
 ```bash
-cc -Wall -Wextra -Werror main.c C00/*.c -o test
+cc -Wall -Wextra -Werror main.c C00/*.c C01/*.c -o test   # adjust paths as needed
 ./test
 ```
 
@@ -97,7 +109,7 @@ All source files aim to comply with the **Norme** (42 School coding standard).
 You can verify locally with:
 
 ```bash
-norminette C00/*.c
+norminette C00/*.c C01/*.c
 ```
 
 *(Install `norminette` via the official 42 repository or your package manager.)*
@@ -116,5 +128,5 @@ This project is released under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-> **UzalSahn** – 1337/42 
+> **Badr Tahraoui** – 1337/42 Student  
 > GitHub: [https://github.com/UzalSahn](https://github.com/UzalSahn)
