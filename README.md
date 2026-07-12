@@ -116,5 +116,5 @@ This project is released under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-> **Badr Tahraoui** – 1337/42 Student  
+> **UzalSahn** – 1337/42 
 > GitHub: [https://github.com/UzalSahn](https://github.com/UzalSahn)
