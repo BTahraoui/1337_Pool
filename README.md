@@ -72,6 +72,23 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 │       ├── main.c
 │       ├── rushv2.c
 │       └── ft_putchar.c
+├── exam00/              # First rush exam (exam00) – individual exercises
+│   ├── aff_z/
+│   │   └── aff_z.c
+│   ├── ft_print_numbers/
+│   │   └── ft_print_numbers.c
+│   ├── ft_putstr/
+│   │   └── ft_putstr.c
+│   ├── ft_strlen/
+│   │   └── ft_strlen.c
+│   ├── hello/
+│   │   └── hello.c
+│   ├── only_z/
+│   │   └── only_z.c
+│   ├── rotone/
+│   │   └── rotone.c
+│   └── ulstr/
+│       └── ulstr.c
 ├── C02/                 # (to be added) – Pointers, arrays, strings
 ├── ...                  # Further modules as I progress
 ├── LICENSE
@@ -92,6 +109,7 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 | **C00** | ✅ Completed | Basic C: `write`, loops, conditionals, recursion, ASCII manipulation |
 | **C01** | ✅ Completed | Functions, pointers, basic algorithms: `swap`, `strlen`, `putstr`, `div/mod`, address manipulation, integer array sorting/reversing |
 | **Rush00** | ✅ Completed | First group project – collaborative problem solving, file I/O, and advanced logic (ex00‑ex04) |
+| **Exam00** | ✅ Completed | First rush exam – individual exercises covering `ft_putstr`, `ft_strlen`, `ft_print_numbers`, etc. |
 | **C02** | ⏳ Planned | Pointers, arrays, strings |
 | **…** | ⏳ Planned | Future modules as the journey continues |
 
@@ -100,7 +118,7 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 ---
 
 ## How to Build & Test Locally
-Although the official evaluation uses the Moulinette (the automated 42 grader grader), you can compile and test everything on your own machine with a standard C compiler.
+Although the official evaluation uses the Moulinette (the automated 42 grader), you can compile and test everything on your own machine with a standard C compiler.
 
 ### Prerequisites
 - A C compiler that supports the `-Wall -Wextra -Werror` flags (e.g., `gcc` or `clang`).
@@ -139,13 +157,13 @@ cc -Wall -Wextra -Werror \
 ```
 
 #### What happens during linking?
-1. **Compilation** – Each `.c` file is turned into an object file (`.o`).  
+1. **Compilation** – Each `.c` file is turned into an object file (`.o`):  
    - `ft_putchar.c` → `ft_putchar.o` (contains the definition of `ft_putchar`)  
    - `rush00.c` → `rush00.o` (contains your rush logic, calls `ft_putchar`)  
    - `main.c` → `main.o` (contains `int main(void)`)
-2. **Linking** – The linker (`ld` invoked via `cc`) combines the object files into a single executable.  
+2. **Linking** – The linker (`ld` invoked via `cc`) combines the object files into a single executable:  
    - It resolves symbols: calls to `ft_putchar` in `rush00.o` and `main.o` are matched with the definition in `ft_putchar.o`.  
-   - If any symbol is missing (e.g., you forgot to include `ft_putchar.c`), the linker will throw an “undefined reference” error.  
+   - If any symbol is missing (e.g., you forgot to include `ft_putchar.c`), the linker will throw an "undefined reference" error.  
    - The final executable (`rush00`) contains machine code from all three object files, ready to be run.
 
 > **Tip:** Keep a separate `main.c` for testing; remove it before submitting to the Moulinette, which provides its own `main`.
@@ -157,7 +175,7 @@ All source files aim to comply with the **Norme** (the 42 School coding standard
 You can verify locally with:
 
 ```bash
-norminette C00/*.c C01/*.c rush/*/*.c
+norminette C00/*.c C01/*.c rush/*/*.c exam00/*/*.c
 ```
 
 *(Install `norminette` via the official 42 repository or your package manager.)*  
@@ -177,6 +195,6 @@ This project is released under the **MIT License** – see the [LICENSE](LICENSE
 ---
 
 ## Closing Thought
-> *“Code is like humor. When you have to explain it, it’s bad.”* – Cory House  
+> "Code is like humor. When you have to explain it, it's bad." – Cory House  
 
 Keep compiling, keep learning, and let the output speak for itself. Happy coding!
