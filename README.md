@@ -6,9 +6,7 @@
 - [Overview](#overview)
 - [Repository Structure](#repository-structure)
 - [Progress Overview](#progress-overview)
-- [How to Build & Test Locally](#how-to-build--test-locally)
-  - [Compiling a Single Exercise](#compiling-a-single-exercise)
-  - [Linking Multiple Files for Rush](#linking-multiple-files-for-rush)
+- [Quick Compile Reference](#quick-compile-reference)
 - [Norminette](#norminette)
 - [Contributing](#contributing)
 - [License](#license)
@@ -26,80 +24,16 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 ## Repository Structure
 ```
 1337_Pool/
-├── C00/                 # Piscine C00 – Basics of C (write, loops, conditionals, recursion)
-│   ├── ft_putchar.c
-│   ├── ft_print_alphabet.c
-│   ├── ft_print_reverse_alphabet.c
-│   ├── ft_print_numbers.c
-│   ├── ft_is_negative.c
-│   ├── ft_print_comb.c
-│   ├── ft_print_comb2.c
-│   ├── ft_putnbr.c
-│   └── c00.pdf          # Subject PDF
-├── C01/                 # Piscine C01 – Functions, pointers, basic algorithms
-│   ├── ft_swap.c
-│   ├── ft_ultimate_div_mod.c
-│   ├── ft_putstr.c
-│   ├── ft_strlen.c
-│   ├── ft_ft.c
-│   ├── ft_div_mod.c
-│   ├── ft_ultimate_ft.c
-│   ├── ft_rev_int_tab.c
-│   ├── ft_sort_int_tab.c
-│   └── c01.pdf          # Subject PDF
-├── rush/                # Rush00 – First group project (ex00‑ex04)
-│   ├── ex00/
-│   │   ├── main.c
-│   │   ├── rush00.c
-│   │   └── ft_putchar.c
-│   ├── ex01/
-│   │   ├── main.c
-│   │   ├── rush01.c
-│   │   └── ft_putchar.c
-│   ├── ex02/
-│   │   ├── main.c
-│   │   ├── rush02.c
-│   │   └── ft_putchar.c
-│   ├── ex03/
-│   │   ├── main.c
-│   │   ├── rush03.c
-│   │   └── ft_putchar.c
-│   ├── ex04/
-│   │   ├── main.c
-│   │   ├── rush04.c
-│   │   └── ft_putchar.c
-│   └── rv2/             # Optional variant / bonus
-│       ├── main.c
-│       ├── rushv2.c
-│       └── ft_putchar.c
-├── exam00/              # First rush exam (exam00) – individual exercises
-│   ├── aff_z/
-│   │   └── aff_z.c
-│   ├── ft_print_numbers/
-│   │   └── ft_print_numbers.c
-│   ├── ft_putstr/
-│   │   └── ft_putstr.c
-│   ├── ft_strlen/
-│   │   └── ft_strlen.c
-│   ├── hello/
-│   │   └── hello.c
-│   ├── only_z/
-│   │   └── only_z.c
-│   ├── rotone/
-│   │   └── rotone.c
-│   └── ulstr/
-│       └── ulstr.c
-├── C02/                 # (to be added) – Pointers, arrays, strings
-├── ...                  # Further modules as I progress
+├── C00/          # Basics of C (write, loops, conditionals, recursion)
+├── C01/          # Functions, pointers, basic algorithms
+├── rush/         # Rush00 – group project (ex00‑ex04)
+├── exam00/       # First rush exam – individual exercises
+├── C02/          # (planned) Pointers, arrays, strings
 ├── LICENSE
 └── README.md
 ```
 
-*Each module directory contains:*
-- **Source files (`*.c`)** – the actual implementations.
-- **Subject PDF (`cXX.pdf`)** – the original exercise statement for reference.
-- **No `main()`** in library files – they are meant to be compiled with the Moulinette or a personal test harness.  
-  (Any `main` present is solely for local testing and should be removed before submission.)
+*Each module contains `.c` source files + subject PDF. No `main()` in library files (for Moulinette). Any `main.c` present is for local testing only.*
 
 ---
 
@@ -107,94 +41,82 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 | Module | Status | Description |
 |--------|--------|-------------|
 | **C00** | ✅ Completed | Basic C: `write`, loops, conditionals, recursion, ASCII manipulation |
-| **C01** | ✅ Completed | Functions, pointers, basic algorithms: `swap`, `strlen`, `putstr`, `div/mod`, address manipulation, integer array sorting/reversing |
-| **Rush00** | ✅ Completed | First group project – collaborative problem solving, file I/O, and advanced logic (ex00‑ex04) |
-| **Exam00** | ✅ Completed | First rush exam – individual exercises covering `ft_putstr`, `ft_strlen`, `ft_print_numbers`, etc. |
+| **C01** | ✅ Completed | Functions, pointers, basic algorithms: `swap`, `strlen`, `putstr`, `div/mod`, array sorting |
+| **Rush00** | ✅ Completed | Group project – collaborative problem solving (ex00‑ex04) |
+| **Exam00** | ✅ Completed | Individual exam exercises: `ft_putstr`, `ft_strlen`, `ft_print_numbers`, etc. |
 | **C02** | ⏳ Planned | Pointers, arrays, strings |
-| **…** | ⏳ Planned | Future modules as the journey continues |
-
-*Feel free to check the commit history for detailed progress.*
+| **…** | ⏳ Planned | Future modules |
 
 ---
 
-## How to Build & Test Locally
-Although the official evaluation uses the Moulinette (the automated 42 grader), you can compile and test everything on your own machine with a standard C compiler.
+## Quick Compile Reference
 
 ### Prerequisites
-- A C compiler that supports the `-Wall -Wextra -Werror` flags (e.g., `gcc` or `clang`).
-- `make` is optional; you can compile manually as shown below.
-
-### Compiling a Single Exercise
-For most exercises in **C00** and **C01**, the source file is self‑contained (aside from `ft_putchar.c` which is often reused).  
-A typical compile command looks like:
-
 ```bash
-# Example: compiling ft_print_alphabet.c
+# Compiler with 42 flags
+cc -Wall -Wextra -Werror ...
+```
+
+### Single Exercise (C00 / C01)
+```bash
+# From repo root
 cc -Wall -Wextra -Werror \
     C00/ft_putchar.c \
     C00/ft_print_alphabet.c \
     -o ft_print_alphabet
-./ft_print_alphabet   # should output: abcdefghijklmnopqrstuvwxyz
+./ft_print_alphabet
 ```
+*Replace files for each exercise. Most need `ft_putchar.c` + the exercise file.*
 
-Replace the source files as needed for each exercise.
-
-### Linking Multiple Files for Rush
-The Rush exercises are structured like a mini‑project: each exercise directory contains a `main.c`, a specific implementation (e.g., `rush00.c`), and a shared `ft_putchar.c`.  
-To build an exercise, you **link all three `.c` files** together so that the linker can resolve external references (e.g., `ft_putchar` used inside `rush00.c`).
-
-#### Step‑by‑step example for `rush/ex00`:
+### Rush Exercises (link 3 files)
 ```bash
 cd rush/ex00
-# Compile and link all three source files
 cc -Wall -Wextra -Werror \
     ft_putchar.c \
     rush00.c \
     main.c \
     -o rush00
-# Run the resulting binary
 ./rush00
 ```
+*Each rush ex has: `main.c` + `rushXX.c` + `ft_putchar.c`*
 
-#### What happens during linking?
-1. **Compilation** – Each `.c` file is turned into an object file (`.o`):  
-   - `ft_putchar.c` → `ft_putchar.o` (contains the definition of `ft_putchar`)  
-   - `rush00.c` → `rush00.o` (contains your rush logic, calls `ft_putchar`)  
-   - `main.c` → `main.o` (contains `int main(void)`)
-2. **Linking** – The linker (`ld` invoked via `cc`) combines the object files into a single executable:  
-   - It resolves symbols: calls to `ft_putchar` in `rush00.o` and `main.o` are matched with the definition in `ft_putchar.o`.  
-   - If any symbol is missing (e.g., you forgot to include `ft_putchar.c`), the linker will throw an "undefined reference" error.  
-   - The final executable (`rush00`) contains machine code from all three object files, ready to be run.
+### Exam Exercises (standalone)
+```bash
+cc -Wall -Wextra -Werror \
+    exam00/ft_putstr/ft_putstr.c \
+    -o ft_putstr
+./ft_putstr
+```
+*Each exam exercise is a single `.c` file (or with `ft_putchar.c` if needed)*
 
-> **Tip:** Keep a separate `main.c` for testing; remove it before submitting to the Moulinette, which provides its own `main`.
+### What happens during linking?
+1. **Compile** – Each `.c` → `.o` object file
+2. **Link** – `ld` combines `.o` files, resolves symbols (e.g., `ft_putchar` calls matched to definition)
+3. **Missing symbol?** → "undefined reference" error (forgot a `.c` file)
+
+> **Tip:** Keep test `main.c` separate; remove before Moulinette submission.
 
 ---
 
 ## Norminette
-All source files aim to comply with the **Norme** (the 42 School coding standard).  
-You can verify locally with:
-
 ```bash
 norminette C00/*.c C01/*.c rush/*/*.c exam00/*/*.c
 ```
-
-*(Install `norminette` via the official 42 repository or your package manager.)*  
-Any deviation will be flagged – fix them to keep the code clean and submission‑ready.
+*(Install via official 42 repo or package manager)*
 
 ---
 
 ## Contributing
-This is a personal learning repository. However, if you notice a bug, have a suggestion, or want to discuss an alternative approach, feel free to open an issue or submit a pull request.  
-Please keep discussions respectful and focused on learning.
+Personal learning repo. Issues/PRs welcome for bugs, suggestions, or alternative approaches. Keep it respectful and learning-focused.
 
 ---
 
 ## License
-This project is released under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+MIT License – see [LICENSE](LICENSE).
 
 ---
 
 ## Closing Thought
 > "Code is like humor. When you have to explain it, it's bad." – Cory House  
 
-Keep compiling, keep learning, and let the output speak for itself. Happy coding!
+Keep compiling, keep learning, let the output speak. Happy coding!
