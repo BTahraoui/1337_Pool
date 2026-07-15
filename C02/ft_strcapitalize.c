@@ -9,7 +9,7 @@
 /*   Updated: 2026/07/15 11:24:48 by btahraoui        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 char 	*ft_strcapitalize(char *str)
 {
 	int i;
