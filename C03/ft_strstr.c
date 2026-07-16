@@ -12,8 +12,8 @@
 
 char 	*ft_strstr(char *str, char *to_find)
 {
-	int counter;
-	int checker;
+	int counter; // count or index.
+	int checker; // check if the index eq to checker so we can see the diff.
 
 	counter = 0;
 	if (to_find[counter] == '\0')
