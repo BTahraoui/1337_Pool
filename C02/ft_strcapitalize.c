@@ -17,7 +17,7 @@ char 	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z') // best approch turn everything lowercase then start.
+		if (str[i] >= 'A' && str[i] <= 'Z') // best approch turn everything lowercase.
 			str[i] += 32;
 		if (i == 0 || !((str[i - 1] >= 'a' && str[i - 1] <= 'z')
 					||  (str[i - 1] >= 'A' && str[i - 1] <= 'Z')|| 

@@ -27,11 +27,11 @@ void	ft_print_comb2(void)
 		b = a + 1;
 		while (b <= 99)
 		{
-			ft_putchar(a / 10 + '0');
-			ft_putchar(a % 10 + '0');
+			ft_putchar(a / 10 + '0');  // left
+			ft_putchar(a % 10 + '0'); // right 
 			write (1, " ", 1);
-			ft_putchar(b / 10 + '0');
-			ft_putchar(b % 10 + '0');
+			ft_putchar(b / 10 + '0'); //left
+			ft_putchar(b % 10 + '0'); //right
 			if (!(a == 98))
 				write (1, ", ", 2);
 			
