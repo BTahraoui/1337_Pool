@@ -2,12 +2,12 @@
 
 void 	ft_putstr(char *str)
 {
-	int i;
+	int index;
 
-	i = 0;
-	while (str[i] != '\0')
+	index = 0;
+	while (str[index] != '\0')
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, &str[index], 1);
+	       	index++;	
 	}
 }

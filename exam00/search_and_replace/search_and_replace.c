@@ -1,5 +1,4 @@
 #include <unistd.h>
-
 void 	ft_putchar(char x)
 {
 	write(1, &x, 1);
@@ -7,9 +6,9 @@ void 	ft_putchar(char x)
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+	if (argc != 4 || argv[2][1] || argv[3][1] != '\0' )
 	{
-		ft_putchar('\n');
+		write(1, "\n", 1);
 		return (0);
 	}
 	int i;
@@ -17,16 +16,12 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (argv[1][i] != '\0')
 	{
-		if (argv[1][i] == 'z')
-		{
-			argv[1][i] = 'a';
+		if (argv[1][i] == argv[2][0])
+		{	
+			argv[1][i] = argv[3][0];
 			ft_putchar(argv[1][i]);
 		}
-		else if (argv[1][i] == 'Z')
-			ft_putchar('A');
-		else if (argv[1][i] >= 'a' && argv[1][i] <= 'z' || argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-			ft_putchar(argv[1][i] + 1);
-		else 
+		else
 			ft_putchar(argv[1][i]);
 		i++;
 	}
