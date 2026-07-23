@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btahraoui <b.tahraoui.badr#gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/13 11:30:53 by btahraoui         #+#    #+#             */
-/*   Updated: 2026/07/13 11:30:53 by btahraoui        ###   ########.fr       */
+/*   Created: 2026/07/23 11:31:47 by btahraoui         #+#    #+#             */
+/*   Updated: 2026/07/23 11:31:47 by btahraoui        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void 	ft_putchar(char x);
-void	rush(int x, int y);
-
-int	main()
+void 	ft_putchar(char x)
 {
-	rush(10, 10);
-	return (0);
+	write(1, &x, 1);
+}
+int main(int argc, char const *argv[])
+{
+	int i;
+	int end;
+
+	end = argc - 1;
+	while (end  > i)
+	{
+		i = 0;
+		while (argv[end][i] != '0')
+		{
+			ft_putchar(argv[end][i]);
+			i++;
+		}
+		ft_putchar('\n');
+		end--;
+	}
+	return 0;
 }
