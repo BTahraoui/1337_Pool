@@ -30,6 +30,7 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 ├── C04/      # atoi, putnbr, putstr, strlen
 ├── C05/      # Recursion & math: factorial, power, fibonacci, prime, sqrt
 ├── C06/      # argv/argc: print_params, print_program_name, rev_params
+├── C07/      # malloc: range, strdup, ultimate_range
 ├── rush/     # Rush00 – group project (ex00‑ex04 + rv2)
 ├── exam00/   # First rush exam – individual exercises
 └── ...
@@ -48,15 +49,16 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 | **C04** | ✅ Completed | `atoi`, `putnbr`, `putstr`, `strlen` |
 | **C05** | ✅ Completed | Recursion & math: factorial, power, fibonacci, prime, sqrt |
 | **C06** | ✅ Completed | argv/argc: `print_params`, `print_program_name`, `rev_params` |
+| **C07** | ✅ Completed | malloc: `range`, `strdup`, `ultimate_range` |
 | **Rush00** | ✅ Completed | Group project – collaborative problem solving (ex00‑ex04) |
 | **Exam00** | ✅ Completed | First rush exam – `ft_putstr`, `ft_strlen`, `ft_print_numbers`, etc. |
-| **C07+** | ⏳ Planned | Future modules |
+| **C08+** | ⏳ Planned | Future modules |
 
 ---
 
 ## Quick Compile Reference
 
-### Standard Exercises (C00, C01, C02, C03, C04, C05, C06)
+### Standard Exercises (C00, C01, C02, C03, C04, C05, C06, C07)
 ```bash
 # Compile single exercise (links ft_putchar.c when needed)
 cc -Wall -Wextra -Werror \
@@ -90,7 +92,7 @@ cc -Wall -Wextra -Werror \
 
 ## Norminette
 ```bash
-norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c rush/*/*.c exam00/*/*.c
+norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c C07/*.c rush/*/*.c exam00/*/*.c
 ```
 *(Install via official 42 repo or package manager.)*
 
