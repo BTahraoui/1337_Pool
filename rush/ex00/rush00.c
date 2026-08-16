@@ -66,12 +66,12 @@ void	rush(int x, int y)
 	i = 0;
 	while (i < y)
 	{
-		if (i == 0)
-			print_top_row(x);
-		else if (i == y - 1)
+		if (i == 0)                   // upper rows
+			print_top_row(x);   
+		else if (i == y - 1)          // bot rows
 			print_bottom_row(x);
-		else
-			print_middle_row(x);
+		else                         // mid rows
+			print_middle_row(x); 
 		i++;
 	}
 }

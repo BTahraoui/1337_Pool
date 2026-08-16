@@ -17,6 +17,6 @@ void	rush(int x, int y);
 
 int	main()
 {
-	rush(10, 10);
+	rush(1, 4);  //(x, y)   x : columns y : rows
 	return (0);
 }

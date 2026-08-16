@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 void 	ft_putchar(char x);
+
 void	print_top_row(int x)  
 {
 	int	j;
@@ -18,10 +19,10 @@ void	print_top_row(int x)
 	j = 0;
 	while (j < x)
 	{
-		if (j == 0 || j == x - 1)
-			ft_putchar('A');
-		else
-			ft_putchar('B');
+		if (j == 0 )
+			ft_putchar('/');
+		else if(j == x - 1);
+			ft_putchar('\\');
 		j++;
 	}
 	ft_putchar('\n');
@@ -35,7 +36,7 @@ void	print_middle_row(int x)
 	while (j < x)
 	{
 		if (j == 0 || j == x - 1)
-			ft_putchar('B');
+			ft_putchar('|');
 		else
 			ft_putchar(' ');
 		j++;
@@ -48,6 +49,7 @@ void	print_bottom_row(int x)
 	int	j;
 
 	j = 0;
+	
 	while (j < x)
 	{
 		if (j == 0 || j == x - 1)
