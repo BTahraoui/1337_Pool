@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	while (argv[1][i] != '\0')
 		i++;
 	size = i;
-       	end = size - 1;
+    end = size - 1;
 	while (end >= 0)
 	{
 		write(1, &argv[1][end], 1);

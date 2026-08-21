@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 		write(1, "\n", 1);
 		return (0);
 	}
-	char s = argv[1][i];
 	while (argv[1][i] != '\0')
 	{
 		if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
