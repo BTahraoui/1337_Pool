@@ -33,6 +33,7 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 ├── C07/      # malloc: range, strdup, ultimate_range
 ├── rush/     # Rush00 – group project (ex00‑ex04 + rv2)
 ├── exam00/   # First rush exam – individual exercises
+├── exam01/   # Second rush exam – individual exercises (Lvl0-2, Lvl3-5)
 └── ...
 ```
 *Each module contains `.c` source files, subject PDF, no `main()` in library files (for Moulinette).*
@@ -52,6 +53,7 @@ The goal is to learn the fundamentals of C, shell scripting, and algorithmic thi
 | **C07** | ✅ Completed | malloc: `range`, `strdup`, `ultimate_range` |
 | **Rush00** | ✅ Completed | Group project – collaborative problem solving (ex00‑ex04) |
 | **Exam00** | ✅ Completed | First rush exam – `ft_putstr`, `ft_strlen`, `ft_print_numbers`, etc. |
+| **Exam01** | 🔄 In Progress | Second rush exam – initial exercises added (Lvl0-2: even, ft_add, etc.; Lvl3-5: alpha_mirror, fizz_buzz, etc.) |
 | **C08+** | ⏳ Planned | Future modules |
 
 ---
@@ -92,7 +94,7 @@ cc -Wall -Wextra -Werror \
 
 ## Norminette
 ```bash
-norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c C07/*.c rush/*/*.c exam00/*/*.c
+norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c C07/*.c rush/*/*.c exam00/*/*.c exam01/*/*.c
 ```
 *(Install via official 42 repo or package manager.)*
 
