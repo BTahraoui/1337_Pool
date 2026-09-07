@@ -41,19 +41,21 @@ All solutions are written with educational intent, focusing on understanding cor
 ├── C05/             # Module 05: Recursion & mathematical functions
 ├── C06/             # Module 06: argv/argc handling
 ├── C07/             # Module 07: Memory allocation (malloc, free)
+├── Shell00/         # Shell 00: Basic shell commands (echo, cd, ls, etc.)
+├── Shell01/         # Shell 01: Advanced shell (redirections, pipes, variables)
 ├── rush/            # Rush00: Group project (ex00‑ex04)
-├── exam00/          # Exam 00: First rush examination
-├── exam01/          # Exam 01: Second rush examination
-├── exam02/          # Exam 02: Third rush examination
+├── exam00/          # Exam 00: First examination
+├── exam01/          # Exam 01: Second examination
+├── exam02/          # Exam 02: Third examination
 ├── Exam_F/          # Practice exam exercises
 └── ...
 ```
 
 **Key Points:**
-- Each module (`CXX`) contains isolated exercises focusing on specific concepts
+- Each module (`CXX`, `ShellXX`) contains isolated exercises focusing on specific concepts
 - Module exercises **do not** include a `main()` function (intended for Moulinette testing)
-- Rush projects (`rush/`) are collaborative group exercises
-- Exams (`examXX/`, `Exam_F/`) are individual timed evaluations
+- Rush projects (`rush/`) are collaborative group exercises (only Rush00 completed)
+- Exams (`examXX/`, `Exam_F/`) are individual timed evaluations (not rush exams)
 - All directories include the corresponding subject PDFs when available
 - Executable files (`.exe`, `.out`) and temporary files are intentionally excluded
 
@@ -71,12 +73,15 @@ All solutions are written with educational intent, focusing on understanding cor
 | **C05**       | ✅ Completed | Recursion & math: factorial, power, Fibonacci, prime detection, sqrt       |
 | **C06**       | ✅ Completed | argv/argc: parameter counting, program name retrieval, reverse parameters   |
 | **C07**       | ✅ Completed | Memory allocation: `range`, `strdup`, `ultimate_range`                     |
+| **Shell00**   | ✅ Completed | Basic shell: echo, cd, ls, pwd, mkdir, rm, etc.                            |
+| **Shell01**   | ✅ Completed | Advanced shell: redirections, pipes, variables, conditionals, loops        |
 | **Rush00**    | ✅ Completed | Group project: collaborative problem solving (ex00‑ex04)                   |
-| **Exam 00**   | ✅ Completed | First rush examination: foundational exercises                             |
-| **Exam 01**   | 🔄 In Progress| Second rush examination: intermediate difficulty                           |
-| **Exam 02**   | ⏳ Planned   | Third rush examination                                                     |
-| **Exam_F**    | 🔄 In Progress| Practice exercises: various exam-style problems                            |
-| **C08+**      | ⏳ Planned   | Future modules                                                             |
+| **Exam 00**   | ✅ Completed | First examination: foundational exercises                                  |
+| **Exam 01**   | ✅ Completed | Second examination: intermediate difficulty                                |
+| **Exam 02**   | ✅ Completed | Third examination                                                          |
+| **Exam_F**    | ✅ Completed | Practice exercises: various exam-style problems                            |
+| **C08**       | 🔄 In Progress| Current module in progress                                                 |
+| **C09+**      | ⏳ Planned   | Future modules                                                             |
 
 *Legend: ✅ Completed | 🔄 In Progress | ⏳ Planned*
 
@@ -98,6 +103,14 @@ cc -Wall -Wextra -Werror \
 ```
 
 **Note:** The `ft_putchar.c` file contains the authorized `write(1, &c, 1)` implementation for output.
+
+### Shell Modules (Shell00-Shell01)
+Shell exercises are typically shell scripts and do not require compilation:
+```bash
+chmod +x Shell00/ls_l.sh
+./Shell00/ls_l.sh
+```
+Refer to individual subject PDFs for specific instructions.
 
 ### Rush Projects (3-file structure)
 Rush exercises follow a specific 3-file compilation pattern:
@@ -129,13 +142,13 @@ cc -Wall -Wextra -Werror \
 Verify compliance with the 42 coding standard:
 ```bash
 norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c C07/*.c \
-            rush/*/*.c exam00/*/*.c exam01/*/*.c exam02/*/*.c Exam_F/*/*.c
+            Shell00/* Shell01/* rush/*/*.c exam00/*/*.c exam01/*/*.c exam02/*/*.c Exam_F/*/*.c
 ```
 *Install via the official [42School/norminette](https://github.com/42School/norminette) repository.*
 
 ### Recommended Workflow
-1. Implement solution in isolated `.c` file
-2. Compile with `-Wall -Wextra -Werror` to catch warnings
+1. Implement solution in isolated `.c` file (or `.sh` for shell)
+2. Compile with `-Wall -Wextra -Werror` to catch warnings (for C modules)
 3. Test with various inputs (edge cases, empty strings, large numbers)
 4. Verify Norminette compliance
 5. Remove test `main()` before final submission (if applicable)
