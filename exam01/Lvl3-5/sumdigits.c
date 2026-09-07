@@ -42,7 +42,14 @@ int	main(int argc, char **argv)
 		}
 		arg++;
 	}
-	ft_putnbr(sum);
+	int r = 0;
+	while (sum > 0)
+	{
+		r = r + sum % 10;
+		sum /= 10;
+	}
+	
+	ft_putnbr(r);
 	ft_putchar('\n');
 	return (0);
 }
