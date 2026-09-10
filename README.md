@@ -1,170 +1,328 @@
-# 1337 Pool — 42 School Piscine Curriculum
+# 1337_Pool
+
+> **The 42 School Piscine** — C programming, shell scripting, and the exams that stand between you and the campus. Every exercise solved from scratch, by hand, the hard way.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Norminette](https://img.shields.io/badge/code%20style-norminette-brightgreen.svg)](https://github.com/42School/norminette)
-[![C](https://img.shields.io/badge/C-ansi%20c-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Language](https://img.shields.io/badge/C-ANSI%20C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Standard](https://img.shields.io/badge/Style-Norminette-brightgreen.svg)](https://github.com/42School/norminette)
+[![Shell](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
+
+---
 
 ## Table of Contents
+
 - [Overview](#overview)
-- [Repository Structure](#repository-structure)
-- [Progress Tracking](#progress-tracking)
+- [Progress Dashboard](#progress-dashboard)
+- [C Modules (C00 – C07)](#c-modules-c00--c07)
+- [Shell Modules (Shell00 – Shell01)](#shell-modules-shell00--shell01)
+- [Rush00](#rush00)
+- [Exams](#exams)
 - [Compilation Guide](#compilation-guide)
-- [Development Tools](#development-tools)
+- [Norminette](#norminette)
 - [License](#license)
-- [Closing Thought](#closing-thought)
 
 ---
 
 ## Overview
 
-This repository contains my personal implementation of the **42 School / 1337 Piscine** curriculum. Each exercise is developed from scratch, adheres strictly to the [Norme](https://github.com/42School/norminette) (42's coding standard), and uses only the authorized functions (primarily `write` for output).
+This repository is my complete journey through the **1337 / 42 School Piscine** — the intensive 4-week bootcamp where you learn C from zero, under the strictest coding standard in the industry (the *Norme*), with no shortcuts and no unauthorized functions.
 
-The Piscine is an intensive 4-week bootcamp that introduces students to:
-- Fundamentals of the C programming language
-- Algorithmic thinking and problem-solving
-- Shell scripting and Unix basics
-- Rigorous coding standards and peer evaluation (Moulinette)
+**What's inside:**
 
-All solutions are written with educational intent, focusing on understanding core concepts rather than optimization.
+| Category | Content |
+|----------|---------|
+| **C00 – C07** | 8 modules, 51 exercises — from `ft_putchar` to `malloc` |
+| **Shell00 – Shell01** | 16 shell exercises — files, rights, SSH, git, scripting |
+| **Rush00** | The group project (5 variants, 3-file pattern) |
+| **Exam 00 → Exam 02** | Individual timed exams, level by level |
+| **Exam_F** | Final exam preparation — 27 classic exercises + extra drills |
 
----
-
-## Repository Structure
-
-```
-1337_Pool/
-├── C00/             # Module 00: Basics (write, loops, conditionals, recursion)
-├── C01/             # Module 01: Functions, pointers, basic algorithms
-├── C02/             # Module 02: String manipulation
-├── C03/             # Module 03: String operations (strcat, strcmp, etc.)
-├── C04/             # Module 04: Integer/string conversion (atoi, putnbr, etc.)
-├── C05/             # Module 05: Recursion & mathematical functions
-├── C06/             # Module 06: argv/argc handling
-├── C07/             # Module 07: Memory allocation (malloc, free)
-├── Shell00/         # Shell 00: Basic shell commands (echo, cd, ls, etc.)
-├── Shell01/         # Shell 01: Advanced shell (redirections, pipes, variables)
-├── rush/            # Rush00: Group project (ex00‑ex04)
-├── exam00/          # Exam 00: First examination
-├── exam01/          # Exam 01: Second examination
-├── exam02/          # Exam 02: Third examination
-├── Exam_F/          # Practice exam exercises
-└── ...
-```
-
-**Key Points:**
-- Each module (`CXX`, `ShellXX`) contains isolated exercises focusing on specific concepts
-- Module exercises **do not** include a `main()` function (intended for Moulinette testing)
-- Rush projects (`rush/`) are collaborative group exercises (only Rush00 completed)
-- Exams (`examXX/`, `Exam_F/`) are individual timed evaluations (not rush exams)
-- All directories include the corresponding subject PDFs when available
-- Executable files (`.exe`, `.out`) and temporary files are intentionally excluded
+Every `.c` file compiles with `-Wall -Wextra -Werror`, passes the Norminette, and uses only the functions allowed by its subject.
 
 ---
 
-## Progress Tracking
+## Progress Dashboard
 
-| Component     | Status       | Description                                                                 |
-|---------------|--------------|-----------------------------------------------------------------------------|
-| **C00**       | ✅ Completed | Basics: `write`, loops, conditionals, recursion, character manipulation     |
-| **C01**       | ✅ Completed | Functions, pointers, basic algorithms: `swap`, `strlen`, `putstr`, `divmod` |
-| **C02**       | ✅ Completed | String manipulation: `strcpy`, `strncpy`, case conversion, validation      |
-| **C03**       | ✅ Completed | String operations: `strcat`, `strncat`, `strlcat`, `strcmp`, `strncmp`, `strstr` |
-| **C04**       | ✅ Completed | Conversion: `atoi`, `putnbr`, `putstr`, `strlen`                           |
-| **C05**       | ✅ Completed | Recursion & math: factorial, power, Fibonacci, prime detection, sqrt       |
-| **C06**       | ✅ Completed | argv/argc: parameter counting, program name retrieval, reverse parameters   |
-| **C07**       | ✅ Completed | Memory allocation: `range`, `strdup`, `ultimate_range`                     |
-| **Shell00**   | ✅ Completed | Basic shell: echo, cd, ls, pwd, mkdir, rm, etc.                            |
-| **Shell01**   | ✅ Completed | Advanced shell: redirections, pipes, variables, conditionals, loops        |
-| **Rush00**    | ✅ Completed | Group project: collaborative problem solving (ex00‑ex04)                   |
-| **Exam 00**   | ✅ Completed | First examination: foundational exercises                                  |
-| **Exam 01**   | ✅ Completed | Second examination: intermediate difficulty                                |
-| **Exam 02**   | ✅ Completed | Third examination                                                          |
-| **Exam_F**    | ✅ Completed | Practice exercises: various exam-style problems                            |
-| **C08**       | 🔄 In Progress| Current module in progress                                                 |
-| **C09+**      | ⏳ Planned   | Future modules                                                             |
+| Module | Type | Exercises | Status |
+|:-------|:-----|:----------:|:------:|
+| **C00** | C — Basics | 8 | ✅ Completed |
+| **C01** | C — Pointers & Arrays | 9 | ✅ Completed |
+| **C02** | C — Strings | 10 | ✅ Completed |
+| **C03** | C — String Ops | 6 | ✅ Completed |
+| **C04** | C — Conversions | 4 | ✅ Completed |
+| **C05** | C — Recursion & Math | 8 | ✅ Completed |
+| **C06** | C — argv / argc | 3 | ✅ Completed |
+| **C07** | C — malloc / free | 3 | ✅ Completed |
+| **Shell00** | Shell — Basics | 10 | ✅ Completed |
+| **Shell01** | Shell — Scripting | 6 | ✅ Completed |
+| **Rush00** | Group Project | 5 | ✅ Completed |
+| **Exam 00** | Exam | 20 | ✅ Completed |
+| **Exam 01** | Exam | 28 | ✅ Completed |
+| **Exam 02** | Exam | 7 | ✅ Completed |
+| **Exam_F** | Final Exam Prep | 44 | ✅ Completed |
+| **C08** | C — Headers & Macros | — | 🔄 In Progress |
 
-*Legend: ✅ Completed | 🔄 In Progress | ⏳ Planned*
+> **Legend:** ✅ Completed · 🔄 In Progress · ⏳ Planned
+
+---
+
+## C Modules (C00 – C07)
+
+### C00 — The Basics of Everything
+*Output, loops, conditionals — the building blocks.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_putchar.c` | Writing a single character using only `write` |
+| ex01 | `ft_print_alphabet.c` | Loop over `a`–`z` |
+| ex02 | `ft_print_reverse_alphabet.c` | Loop over `z`–`a` |
+| ex03 | `ft_print_numbers.c` | Loop over `0`–`9` |
+| ex04 | `ft_is_negative.c` | First conditional logic |
+| ex05 | `ft_print_comb.c` | Nested loops + combination logic |
+| ex06 | `ft_print_comb2.c` | Combinations of number pairs |
+| ex07 | `ft_putnbr.c` | Printing any int — including `INT_MIN` |
+
+### C01 — Pointers, the Real Boss
+*Pointers, arrays, and pointer-to-pointer.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_ft.c` | Pointer to `int` |
+| ex01 | `ft_ultimate_ft.c` | Pointer to pointer to pointer… (5 levels) |
+| ex02 | `ft_swap.c` | Swap via pointers |
+| ex03 | `ft_div_mod.c` | Return two results through pointers |
+| ex04 | `ft_ultimate_div_mod.c` | Same, in-place |
+| ex05 | `ft_putstr.c` | String output |
+| ex06 | `ft_strlen.c` | String length |
+| ex07 | `ft_rev_int_tab.c` | Reversing an int array |
+| ex08 | `ft_sort_int_tab.c` | Sorting an int array |
+
+### C02 — String Manipulation
+*Rebuilding `<string.h>` by hand.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_strcpy.c` | Copy a string |
+| ex01 | `ft_strncpy.c` | Copy `n` bytes |
+| ex02 | `ft_str_is_alpha.c` | Alpha validation |
+| ex03 | `ft_str_is_numeric.c` | Digit validation |
+| ex04 | `ft_str_is_lowercase.c` | Lowercase validation |
+| ex05 | `ft_str_is_uppercase.c` | Uppercase validation |
+| ex06 | `ft_str_is_printable.c` | Printable validation |
+| ex07 | `ft_strupcase.c` | To uppercase |
+| ex08 | `ft_strlowcase.c` | To lowercase |
+| ex09 | `ft_strcapitalize.c` | Capitalize each word |
+
+### C03 — Advanced String Operations
+*Comparison, concatenation, searching.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_strcmp.c` | Lexicographic comparison |
+| ex01 | `ft_strncmp.c` | Comparison with `n` limit |
+| ex02 | `ft_strcat.c` | Concatenation |
+| ex03 | `ft_strncat.c` | Concatenation with `n` limit |
+| ex04 | `ft_strstr.c` | Substring search |
+| ex05 | `ft_strlcat.c` | Safe concatenation (BSD style) |
+
+### C04 — Numbers ↔ Strings
+*Converting between `int` and `char *`.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_strlen.c` | Length (revisited) |
+| ex01 | `ft_putstr.c` | Output (revisited) |
+| ex02 | `ft_putnbr.c` | `int` → screen |
+| ex03 | `ft_atoi.c` | String → `int`, with sign handling |
+
+### C05 — Recursion & Mathematics
+*Where loops end and recursion begins.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_iterative_factorial.c` | Factorial, iterative |
+| ex01 | `ft_recursive_factorial.c` | Factorial, recursive |
+| ex02 | `ft_iterative_power.c` | Power, iterative |
+| ex03 | `ft_recursive_power.c` | Power, recursive |
+| ex04 | `ft_sqrt.c` | Integer square root |
+| ex05 | `ft_is_prime.c` | Primality test |
+| ex06 | `ft_find_next_prime.c` | Next prime ≥ `nb` |
+| ex07 | `ft_fibonacci.c` | Fibonacci, recursive |
+
+### C06 — Command-line Arguments
+*`argc`, `argv`, and the program itself.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_print_program_name.c` | Read `argv[0]` |
+| ex01 | `ft_print_params.c` | Print all arguments |
+| ex02 | `ft_rev_params.c` | Print arguments in reverse |
+
+### C07 — Dynamic Memory
+*`malloc`, `free`, and the heap.*
+
+| Exercise | File | Concept |
+|:---------|:-----|:--------|
+| ex00 | `ft_strdup.c` | Duplicate a string on the heap |
+| ex01 | `ft_range.c` | Allocate a range of ints |
+| ex02 | `ft_ultimate_range.c` | Same, returning size through a pointer |
+
+---
+
+## Shell Modules (Shell00 – Shell01)
+
+### Shell00 — Unix Basics
+*Terminal, files, permissions, SSH, and git.*
+
+| Exercise | Deliverable | Concept |
+|:---------|:------------|:--------|
+| ex00 | `z` | A file named `z`, containing `z` |
+| ex01 | `testShell00.tar` | Archive with exact structure |
+| ex02 | `exo2.tar` | Archive with specific permissions |
+| ex03 | `id_rsa_pub` | SSH public key |
+| ex04 | `midLS` | 30-day filter on `git log` |
+| ex05 | `git_commit.sh` | Last 5 commit messages |
+| ex06 | `git_ignore.sh` | Ignored-file rules |
+| ex07 | `b` | Skip the MAC check |
+| ex08 | `clean` | Find `.c` files containing "clean" |
+| ex09 | `ft_magic` | A file with a magic number |
+
+### Shell01 — Shell Scripting
+*Variables, expansion, scripting logic.*
+
+| Exercise | Deliverable | Concept |
+|:---------|:------------|:--------|
+| ex01 | `print_groups.sh` | Print user groups |
+| ex02 | `find_sh.sh` | Find all `.sh` files |
+| ex03 | `count_files.sh` | Count files in current tree |
+| ex04 | `MAC.sh` | Show MAC address |
+| ex05 | `_$_MaRViN_$_` | The file the subject asks for |
+| ex06 | `skip.sh` | Skip lines according to subject |
+
+---
+
+## Rush00
+
+The **only rush** in this repository — the collaborative group project of the Piscine, done solo in all 5 variants to master the pattern.
+
+| Variant | Files | Pattern |
+|:--------|:------|:--------|
+| ex00 | `ft_putchar.c`, `main.c`, `rush00.c` | Top-left corner |
+| ex01 | `ft_putchar.c`, `main.c`, `rush01.c` | Top-right corner |
+| ex02 | `ft_putchar.c`, `main.c`, `rush02.c` | Bottom-right corner |
+| ex03 | `ft_putchar.c`, `main.c`, `rush03.c` | Bottom-left corner |
+| ex04 | `ft_putchar.c`, `main.c`, `rush04.c` | Full rectangle |
+
+Each variant compiles with the classic 3-file pattern (see [Compilation Guide](#compilation-guide)).
+
+---
+
+## Exams
+
+> These are the **individual timed exams** of the Piscine — from the first exam to the final one. Not rush projects: pure solo, under the clock.
+
+### Exam 00 — First Exam ✅
+*Level 0 foundations — 20 solved exercises.*
+
+| Level | Topics |
+|:------|:-------|
+| Lvl 0 | `aff_a`, `aff_z`, `ft_putstr`, `ft_strlen`, `ft_swap`, `ft_atoi`, `hello` |
+| Lvl 0+ | `first_word`, `ft_print_numbers`, `maff_alpha`, `only_z`, `repeat_alpha` |
+| Lvl 0+ | `rev_print`, `rotone`, `search_and_replace`, `ulstr` |
+| Extras | `climbing_stairs`, `sumtwo`, `ispalindrom`, `examlvl0/` (15 drills) |
+
+### Exam 01 — Second Exam ✅
+*Organized by difficulty tier — 28 solved exercises.*
+
+| Tier | Files | Topics |
+|:-----|:------|:-------|
+| **Lvl 0–2** | 14 | `ft_add`, `ft_sub`, `ft_mul`, `ft_div`, `ft_inc`, `ft_dec`, `even`, `odd`, `ft_putstr`, `ft_ft`, `write_string`, `interval_spaces`, `maph_alpha`, `maph_revalpha` |
+| **Lvl 3–5** | 14 | `alpha_mirror`, `fizz_buzz`, `buzz_fizz`, `count_alen`, `first_word`, `ft_strlen`, `min_two`, `occ_a`, `occ_z`, `printf_even`, `printf_interval`, `splithardcoded`, `string_palindrom`, `sumdigits` |
+
+### Exam 02 — Third Exam ✅
+*Level 5+ problems — 7 solved exercises.*
+
+| Exercise | Concept |
+|:---------|:--------|
+| `cipher-c` | Caesar cipher in C |
+| `ft_strcpy` | String copy (revisited under exam rules) |
+| `itoa` | Integer to ASCII conversion |
+| `palindrom_char` | String palindrome check |
+| `palindrom_int` | Integer palindrome check |
+| `search_and_replace` | Character replacement |
+| `sum_degits` | Digit summing |
+
+### Exam_F — Final Exam Preparation ✅
+*44 solved exercises: the classic final-exam set (27) plus 17 extra drills.*
+
+**The classic set** (`42-exames/`): `aff_a` · `aff_last_param` · `aff_z` · `first_word` · `ft_atoi` · `ft_countdown` · `ft_print_numbers` · `ft_putstr` · `ft_strcmp` · `ft_strcpy` · `ft_strlen` · `ft_swap` · `hello` · `inter` · `maff_alpha` · `maff_revalpha` · `max` · `only_a` · `only_z` · `print_bits` · `repeat_alpha` · `rev_print` · `rot_13` · `rotone` · `search_and_replace` · `swap_bits` · `ulstr`
+
+**Extra drills** (root of `Exam_F/`): `char_palindrom` · `cipher` · `count_words` · `decrypt_cipher` · `fle` · `itoa` · `range` · `repeat_alpha` · `rev_inplace` · `rev_str` · `rot_13` · `rot_n` · `rrange` · `space_it` · `stars_it` · `stitch` · `sum_degits`
 
 ---
 
 ## Compilation Guide
 
-### Standard Modules (C00-C07)
-Most exercises in modules C00-C07 are designed to be compiled with a helper function (`ft_putchar.c`) for character output:
+### Standard C Modules (C00 – C07)
+
+Exercises have no `main()` — they're graded by the Moulinette. To test locally, compile with the module's `ft_putchar.c` (or a personal `main.c` kept outside the folder):
 
 ```bash
-# Example: Compiling an exercise from C00
-cc -Wall -Wextra -Werror \
-    C00/ft_putchar.c \
-    C00/ft_print_alphabet.c \
-    -o ft_print_alphabet
-
-./ft_print_alphabet  # Output: abcdefghijklmnopqrstuvwxyz
+cc -Wall -Wextra -Werror C00/ft_putchar.c C00/ft_print_alphabet.c -o test
+./test   # → abcdefghijklmnopqrstuvwxyz
 ```
 
-**Note:** The `ft_putchar.c` file contains the authorized `write(1, &c, 1)` implementation for output.
-
-### Shell Modules (Shell00-Shell01)
-Shell exercises are typically shell scripts and do not require compilation:
-```bash
-chmod +x Shell00/ls_l.sh
-./Shell00/ls_l.sh
-```
-Refer to individual subject PDFs for specific instructions.
-
-### Rush Projects (3-file structure)
-Rush exercises follow a specific 3-file compilation pattern:
+### Rush00 (3-file pattern)
 
 ```bash
 cd rush/ex00
-cc -Wall -Wextra -Werror \
-    ft_putchar.c \
-    rush00.c \
-    main.c \
-    -o rush00
+cc -Wall -Wextra -Werror ft_putchar.c rush00.c main.c -o rush00
+./rush00 3 5   # → a 3×5 rectangle of 'A's and 'B's
+```
 
-./rush00
+### Shell Modules
+
+No compilation — just make executable and run:
+
+```bash
+chmod +x Shell01/ex01/print_groups.sh
+./Shell01/ex01/print_groups.sh
 ```
 
 ### What Happens During Linking
-1. **Compilation** – Each `.c` file is compiled to an object file (`.o`)
-2. **Linking** – The linker (`ld`, invoked via `cc`) combines object files, resolving external symbols
-   - Example: A call to `ft_putchar()` in `main.c` is linked to its definition in `ft_putchar.c`
-3. **Error Handling** – "undefined reference" errors occur when a symbol is declared but not defined
 
-> 💡 **Best Practice**: Keep test `main.c` files separate from library code; remove them before Moulinette submission to avoid conflicts.
+1. **Compile** — each `.c` becomes an object file (`.o`)
+2. **Link** — the linker resolves every symbol: the call to `ft_putchar()` in `main.c` is bound to its definition in `ft_putchar.c`
+3. **Fail case** — *"undefined reference to `ft_putchar`"* means the linker found the call but not the definition: you forgot to pass `ft_putchar.c` to `cc`
+
+> 💡 **Tip:** `main.c` is for your eyes only. Delete it before evaluation — the Moulinette brings its own `main`.
 
 ---
 
-## Development Tools
+## Norminette
 
-### Norminette
-Verify compliance with the 42 coding standard:
+The 42 coding standard — no function over 25 lines, 5 parameters max, one declaration per line, and 80 columns of discipline:
+
 ```bash
-norminette C00/*.c C01/*.c C02/*.c C03/*.c C04/*.c C05/*.c C06/*.c C07/*.c \
-            Shell00/* Shell01/* rush/*/*.c exam00/*/*.c exam01/*/*.c exam02/*/*.c Exam_F/*/*.c
+norminette C00 C01 C02 C03 C04 C05 C06 C07 \
+           rush/ex00 rush/ex01 rush/ex02 rush/ex03 rush/ex04 \
+           exam00 exam01 exam02 Exam_F
 ```
-*Install via the official [42School/norminette](https://github.com/42School/norminette) repository.*
 
-### Recommended Workflow
-1. Implement solution in isolated `.c` file (or `.sh` for shell)
-2. Compile with `-Wall -Wextra -Werror` to catch warnings (for C modules)
-3. Test with various inputs (edge cases, empty strings, large numbers)
-4. Verify Norminette compliance
-5. Remove test `main()` before final submission (if applicable)
+```bash
+norminette -RCheckForbiddenSourceHeader   # deep check on a single file
+```
+
+Install: `pip3 install norminette`
 
 ---
 
 ## License
 
-This project is released under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+Released under the **MIT License** — see [LICENSE](LICENSE).
 
 ---
 
-## Closing Thought
+> *"Talk is cheap. Show me the code."* — Linus Torvalds
 
-> “Code is like humor. When you have to explain it, it’s bad.” – Cory House  
-
-Keep compiling, keep learning, and let your code speak for itself. Remember: the goal isn't just to make it work—it's to make it *right*.
-
-Happy coding, and may your segments never fault! 🖥️
+**`return (0);`** 🖥️
